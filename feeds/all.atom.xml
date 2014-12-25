@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Lazy Coder</title><link href="http://kskrishnasangeeth.github.io/" rel="alternate"></link><link href="http://kskrishnasangeeth.github.io/feeds/all.atom.xml" rel="self"></link><id>http://kskrishnasangeeth.github.io/</id><updated>2014-12-26T00:00:00+01:00</updated><entry><title>Trying out pelican</title><link href="http://kskrishnasangeeth.github.io/trying-out.html" rel="alternate"></link><updated>2014-12-26T00:00:00+01:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2014-12-26:trying-out.html</id><summary type="html">&lt;p&gt;So i am trying out pelican for the first time here.&lt;/p&gt;
+&lt;p&gt;I have tried out jekyll earlier using gh-pages and here i am trying out the python equivalent.&lt;/p&gt;
+&lt;p&gt;Since i was using my windows box this time , there was a bit of tweaking that was needed to eventually get things running.&lt;/p&gt;
+&lt;p&gt;A detailed step by step guide for running in windows is available &lt;a href="http://spapas.github.io/2013/10/07/pelican-static-windows/"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;python&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello World from Pelican&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That's all for now.&lt;/p&gt;</summary><category term="Pelican"></category></entry></feed>
