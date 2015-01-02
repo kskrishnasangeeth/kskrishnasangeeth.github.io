@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The Lazy Coder</title><link href="http://kskrishnasangeeth.github.io/" rel="alternate"></link><link href="http://kskrishnasangeeth.github.io/feeds%5Csangeeth.atom.xml" rel="self"></link><id>http://kskrishnasangeeth.github.io/</id><updated>2014-12-28T00:00:00+00:00</updated><entry><title>Pelican Trial</title><link href="http://kskrishnasangeeth.github.io/hello.html" rel="alternate"></link><updated>2014-12-28T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2014-12-26:hello.html</id><summary type="html">&lt;p&gt;So i am trying out pelican for the first time here.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Lazy Coder</title><link href="http://kskrishnasangeeth.github.io/" rel="alternate"></link><link href="http://kskrishnasangeeth.github.io/feeds%5Csangeeth.atom.xml" rel="self"></link><id>http://kskrishnasangeeth.github.io/</id><updated>2015-01-03T00:00:00+00:00</updated><entry><title>Rand new</title><link href="http://kskrishnasangeeth.github.io/rand.html" rel="alternate"></link><updated>2015-01-03T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2015-01-03:rand.html</id><summary type="html">&lt;p&gt;This is new stuff &lt;i class="fa fa-coffee"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;I like my &lt;i class="fa fa-home"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;D:\pelican\kskrishnasangeeth.github.io\output&amp;gt;python -m pelican.server
+127.0.0.1 - - [03/Jan/2015 03:36:34] &amp;quot;GET / HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [03/Jan/2015 03:36:35] &amp;quot;GET /theme/css/main.css HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [03/Jan/2015 03:36:35] &amp;quot;GET /theme/css/font-awesome.min.css HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [03/Jan/2015 03:36:35] &amp;quot;GET /theme/js/vendor/modernizr-2.6.2.custom.min.js HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [03/Jan/2015 03:36:35] &amp;quot;GET /theme/js/scripts.min.js HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [03/Jan/2015 03:36:35] &amp;quot;GET /images/avatar.jpg HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [03/Jan/2015 03:36:35] &amp;quot;GET /theme/css/font-awesome.css HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [03/Jan/2015 03:36:36] &amp;quot;GET /images/header.jpg HTTP/1.1&amp;quot; 200 -
+127.0.0.1 - - [03/Jan/2015 03:36:36] &amp;quot;GET /theme/fonts/fontawesome-webfont.woff?v=4.2.0 HTTP/1.1&amp;quot; 200 -
+WARNING:root:Unable to find file /favicon.png/index.html or variations.
+127.0.0.1 - - [03/Jan/2015 03:36:40] &amp;quot;GET /hello.html HTTP/1.1&amp;quot; 200 -
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hosting is made in github pages which is really cool and interesting.&lt;/p&gt;
+&lt;p&gt;That's all for now &lt;/p&gt;
+&lt;p&gt;i  &lt;i class="fa fa-heart"&gt;&lt;/i&gt;  pelican.&lt;/p&gt;</summary><category term="Stuff"></category></entry><entry><title>Pelican Trial</title><link href="http://kskrishnasangeeth.github.io/hello.html" rel="alternate"></link><updated>2014-12-28T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2014-12-26:hello.html</id><summary type="html">&lt;p&gt;So i am trying out pelican for the first time here.&lt;/p&gt;
 &lt;p&gt;I have tried out &lt;code&gt;jekyll&lt;/code&gt; earlier using gh-pages and here i am trying out the python equivalent.&lt;/p&gt;
 &lt;p&gt;Since i was using my windows box this time , there was a bit of tweaking that was needed to eventually get things running.&lt;/p&gt;
 &lt;p&gt;A detailed step by step guide for running in windows is available &lt;a href="http://spapas.github.io/2013/10/07/pelican-static-windows/"&gt;here&lt;/a&gt;&lt;/p&gt;
@@ -10,4 +29,4 @@
 
 &lt;p&gt;Hosting is made in github pages which is really cool and interesting.&lt;/p&gt;
 &lt;p&gt;That's all for now &lt;/p&gt;
-&lt;p&gt;i  &lt;i class="fa fa-heart"&gt;&lt;/i&gt;  pelican.&lt;/p&gt;</summary><category term="Pelican"></category></entry></feed>
+&lt;p&gt;i  &lt;i class="fa fa-heart"&gt;&lt;/i&gt;  pelican&lt;/p&gt;</summary><category term="Pelican"></category></entry></feed>
