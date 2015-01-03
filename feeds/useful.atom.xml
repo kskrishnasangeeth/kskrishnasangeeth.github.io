@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The Lazy Coder</title><link href="http://kskrishnasangeeth.github.io/" rel="alternate"></link><link href="http://kskrishnasangeeth.github.io/feeds%5Call-en.atom.xml" rel="self"></link><id>http://kskrishnasangeeth.github.io/</id><updated>2015-01-03T00:00:00+00:00</updated><entry><title>Using Git and Github</title><link href="http://kskrishnasangeeth.github.io/rand.html" rel="alternate"></link><updated>2015-01-03T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2015-01-03:rand.html</id><summary type="html">&lt;h1 id="why-git"&gt;Why Git?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Lazy Coder</title><link href="http://kskrishnasangeeth.github.io/" rel="alternate"></link><link href="http://kskrishnasangeeth.github.io/feeds/useful.atom.xml" rel="self"></link><id>http://kskrishnasangeeth.github.io/</id><updated>2015-01-03T00:00:00+00:00</updated><entry><title>Using Git and Github</title><link href="http://kskrishnasangeeth.github.io/rand.html" rel="alternate"></link><updated>2015-01-03T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2015-01-03:rand.html</id><summary type="html">&lt;h1 id="why-git"&gt;Why Git?&lt;/h1&gt;
 &lt;p&gt;&lt;i class="fa fa-git"&gt;&lt;/i&gt; is one of the most important tool in software development right now. The advent of websites like github has 
 contributed greately to making the life of a developer whole lot easier. To understand why some sort of version control 
 is a necessity of our time, let me try to think of a scenario.&lt;/p&gt;
@@ -159,15 +159,4 @@ So what we do is, copy our master branch to a new branch and tell git to specifi
 &lt;p&gt;&lt;a href="https://help.github.com/articles/set-up-git/"&gt;Github&lt;/a&gt; help pages are good.&lt;/p&gt;
 &lt;p&gt;Code school has a great interactive course on &lt;a href="https://try.github.io/"&gt;git&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This &lt;a href="http://rogerdudler.github.io/git-guide/"&gt;infographic&lt;/a&gt; is so good that you would feel like buying a beer to the guy who wrote this.&lt;/p&gt;
-&lt;p&gt;PS : I wanted to keep this article as simple as possible in language and tone. I am not sure how much i have succeeded in that. If i have got something wrong or something needs more explanation please let me know in comments.&lt;/p&gt;</summary><category term="Git"></category><category term="Github"></category></entry><entry><title>Pelican Trial</title><link href="http://kskrishnasangeeth.github.io/hello.html" rel="alternate"></link><updated>2014-12-28T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2014-12-26:hello.html</id><summary type="html">&lt;p&gt;So i am trying out pelican for the first time here.&lt;/p&gt;
-&lt;p&gt;I have tried out &lt;code&gt;jekyll&lt;/code&gt; earlier using gh-pages and here i am trying out the python equivalent.&lt;/p&gt;
-&lt;p&gt;Since i was using my windows box this time , there was a bit of tweaking that was needed to eventually get things running.&lt;/p&gt;
-&lt;p&gt;A detailed step by step guide for running in windows is available &lt;a href="http://spapas.github.io/2013/10/07/pelican-static-windows/"&gt;here&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;python&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello World from Pelican&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Hosting is made in github pages which is really cool and interesting.&lt;/p&gt;
-&lt;p&gt;That's all for now &lt;/p&gt;
-&lt;p&gt;i  &lt;i class="fa fa-heart"&gt;&lt;/i&gt;  pelican&lt;/p&gt;</summary><category term="Pelican"></category></entry></feed>
+&lt;p&gt;PS : I wanted to keep this article as simple as possible in language and tone. I am not sure how much i have succeeded in that. If i have got something wrong or something needs more explanation please let me know in comments.&lt;/p&gt;</summary><category term="Git"></category><category term="Github"></category></entry></feed>

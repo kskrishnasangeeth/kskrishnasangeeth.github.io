@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/index.html</loc>
-<lastmod>2015-01-03T11:10:16-00:00</lastmod>
+<lastmod>2015-01-04T01:17:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/archives.html</loc>
-<lastmod>2015-01-03T11:10:16-00:00</lastmod>
+<lastmod>2015-01-04T01:17:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/tags.html</loc>
-<lastmod>2015-01-03T11:10:16-00:00</lastmod>
+<lastmod>2015-01-04T01:17:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/categories.html</loc>
-<lastmod>2015-01-03T11:10:16-00:00</lastmod>
+<lastmod>2015-01-04T01:17:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -53,7 +53,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://kskrishnasangeeth.github.io/category/random.html</loc>
+<loc>http://kskrishnasangeeth.github.io/category/useful.html</loc>
 <lastmod>2015-01-03T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -67,7 +67,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://kskrishnasangeeth.github.io/tag/stuff.html</loc>
+<loc>http://kskrishnasangeeth.github.io/tag/git.html</loc>
+<lastmod>2015-01-03T00:00:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://kskrishnasangeeth.github.io/tag/github.html</loc>
 <lastmod>2015-01-03T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
