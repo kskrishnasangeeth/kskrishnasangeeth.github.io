@@ -103,13 +103,14 @@ So what we do is, copy our master branch to a new branch and tell git to specifi
 
 
 &lt;p&gt;This tells git that now we are working on master branch and changes for this branch needs to be tracked.&lt;/p&gt;
-&lt;h2 id="knowing-which-branch-we-are-working-on"&gt;Knowing which branch we are working on.&lt;/h2&gt;
+&lt;h2 id="knowing-which-branch-we-are-working-on-and-other-things"&gt;Knowing which branch we are working on and other things.&lt;/h2&gt;
 &lt;p&gt;This will show which branch git is currently pointing to.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git status
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;We will see response like &lt;em&gt;"On master branch"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Also this command will give us info such as which are the newly added files(untracked files), which are the files that that has changes made.&lt;/p&gt;
 &lt;h2 id="dont-forget-to-push-the-new-branch-to-remote-repo"&gt;Don't forget to push the new branch to remote repo&lt;/h2&gt;
 &lt;p&gt;We have finished working on the new branch and it can be pushed to remote repository by this&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git push origin &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;new_branch_name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -157,6 +158,7 @@ So what we do is, copy our master branch to a new branch and tell git to specifi
 &lt;p&gt;I have barely scratched the surface on the true potential of git and Github, it is something i believe that should be experienced by every developer. Github is really fuelling the opensource development community with tools that makes their work really easy. Incase you have never tried git or github before I strongly encourage you to give it a try.&lt;/p&gt;
 &lt;h1 id="other-places-to-learn"&gt;Other Places to learn&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://help.github.com/articles/set-up-git/"&gt;Github&lt;/a&gt; help pages are good.&lt;/p&gt;
-&lt;p&gt;Code school has a great interactive course on &lt;a href="https://try.github.io/"&gt;git&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This &lt;a href="http://rogerdudler.github.io/git-guide/"&gt;infographic&lt;/a&gt; is so good that you would feel like buying a beer to the guy who wrote this.&lt;/p&gt;
+&lt;p&gt;Code school has a great interactive course on &lt;a href="https://try.github.io/"&gt;git&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This &lt;a href="http://rogerdudler.github.io/git-guide/"&gt;infographic&lt;/a&gt; is so good that you would feel like buying a beer to the guy who created this.&lt;/p&gt;
+&lt;p&gt;Atlassian has a great &lt;a href="https://www.atlassian.com/git/tutorials/"&gt;tutorial&lt;/a&gt; which is highly detailed that could really turn you into a git Guru.&lt;/p&gt;
 &lt;p&gt;PS : I wanted to keep this article as simple as possible in language and tone. I am not sure how much i have succeeded in that. If i have got something wrong or something needs more explanation please let me know in comments.&lt;/p&gt;</summary><category term="Git"></category><category term="Github"></category></entry></feed>
