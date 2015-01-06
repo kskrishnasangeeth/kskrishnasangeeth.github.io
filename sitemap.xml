@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/index.html</loc>
-<lastmod>2015-01-04T10:00:17-00:00</lastmod>
+<lastmod>2015-01-06T13:22:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/archives.html</loc>
-<lastmod>2015-01-04T10:00:17-00:00</lastmod>
+<lastmod>2015-01-06T13:22:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/tags.html</loc>
-<lastmod>2015-01-04T10:00:17-00:00</lastmod>
+<lastmod>2015-01-06T13:22:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/categories.html</loc>
-<lastmod>2015-01-04T10:00:17-00:00</lastmod>
+<lastmod>2015-01-06T13:22:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/rand.html</loc>
-<lastmod>2015-01-03T00:00:00+00:00</lastmod>
+<lastmod>2015-01-06T00:00:00+00:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -54,7 +54,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/category/useful.html</loc>
-<lastmod>2015-01-03T00:00:00+00:00</lastmod>
+<lastmod>2015-01-06T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -68,21 +68,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/tag/git.html</loc>
-<lastmod>2015-01-03T00:00:00+00:00</lastmod>
+<lastmod>2015-01-06T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/tag/github.html</loc>
-<lastmod>2015-01-03T00:00:00+00:00</lastmod>
+<lastmod>2015-01-06T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kskrishnasangeeth.github.io/author/sangeeth.html</loc>
-<lastmod>2015-01-03T00:00:00+00:00</lastmod>
+<lastmod>2015-01-06T00:00:00+00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
