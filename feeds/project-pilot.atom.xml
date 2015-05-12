@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>CEC Loves To Code</title><link href="http://kskrishnasangeeth.github.io/" rel="alternate"></link><link href="http://kskrishnasangeeth.github.io/feeds/project-pilot.atom.xml" rel="self"></link><id>http://kskrishnasangeeth.github.io/</id><updated>2015-05-12T00:00:00+00:00</updated><entry><title>CEC Loves to Code Project</title><link href="http://kskrishnasangeeth.github.io/hello.html" rel="alternate"></link><updated>2015-05-12T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2015-05-12:hello.html</id><summary type="html">&lt;p&gt;Dear CECian,&lt;/p&gt;
+&lt;p&gt;We have something wonderful being created specifically for you guys. We want to
+teach you the joys of coding this summer. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;cec&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Loves to code&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Sincerely,
+CECian&lt;/p&gt;</summary><category term="Pilot"></category></entry></feed>
