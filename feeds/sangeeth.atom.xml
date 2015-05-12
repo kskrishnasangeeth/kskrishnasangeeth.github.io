@@ -1,11 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>CEC Loves To Code</title><link href="http://kskrishnasangeeth.github.io/" rel="alternate"></link><link href="http://kskrishnasangeeth.github.io/feeds%5Csangeeth.atom.xml" rel="self"></link><id>http://kskrishnasangeeth.github.io/</id><updated>2015-05-12T00:00:00+00:00</updated><entry><title>CEC Loves to Code Project</title><link href="http://kskrishnasangeeth.github.io/hello.html" rel="alternate"></link><updated>2015-05-12T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2015-05-12:hello.html</id><summary type="html">&lt;p&gt;Dear CECian,&lt;/p&gt;
-&lt;p&gt;We have something wonderful being created specifically for you guys. We want to
-teach you the joys of coding this summer. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;cec&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Loves to code&amp;quot;&lt;/span&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Lazy Coder</title><link href="http://kskrishnasangeeth.github.io/" rel="alternate"></link><link href="http://kskrishnasangeeth.github.io/feeds%5Csangeeth.atom.xml" rel="self"></link><id>http://kskrishnasangeeth.github.io/</id><updated>2015-01-15T00:00:00+00:00</updated><entry><title>Hotspot fix for Linux machines</title><link href="http://kskrishnasangeeth.github.io/hotspot.html" rel="alternate"></link><updated>2015-01-15T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2015-01-15:hotspot.html</id><summary type="html">&lt;h1 id="fixing-the-hotspot-issue"&gt;Fixing the hotspot issue&lt;/h1&gt;
+&lt;p&gt;I had a problem with running hotspot on my machine for some time now. I had issues on my old laptop which was running &lt;code&gt;Ubuntu &lt;/code&gt; . I had tried many things including the inbuilt option to setup wifi hotspot, even &lt;code&gt;ap-hotspot&lt;/code&gt;  which appeared to have fixed the issue for many people. I had given up some time back thinking that this was some issue with the drivers and looked at other options like &lt;code&gt;connectify&lt;/code&gt; which is a paid application for windows environment.&lt;/p&gt;
+&lt;p&gt;I formatted my system and installed the latest version of &lt;a href="http://elementaryos.org/"&gt;Elementary OS&lt;/a&gt; which is awesome btw. So I thought why not try to fix the hotspot issue once again and this time with some good luck i succeeded.&lt;/p&gt;
+&lt;h2 id="checking-whether-your-sytem-supports-hotspot"&gt;Checking whether your sytem supports Hotspot&lt;/h2&gt;
+&lt;p&gt;We need to ensure that the system you are using actually do support wifi hotspot. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;lspci &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="k"&gt;k&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="k"&gt;grep&lt;/span&gt; &lt;span class="p"&gt;-&lt;/span&gt;A &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="k"&gt;i&lt;/span&gt; network
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Sincerely,
-CECian&lt;/p&gt;</summary><category term="Pilot"></category></entry></feed>
+&lt;p&gt;This will give you information regarding the Network controller , adapter , &lt;code&gt;Kernel module&lt;/code&gt; etc. &lt;/p&gt;
+&lt;p&gt;Let's take the &lt;code&gt;Kernel module&lt;/code&gt;. For me it was &lt;em&gt;ath5k&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;modinfo &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;YOUR_KERNEL_MODULE&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="k"&gt;grep&lt;/span&gt; depend
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You will get few values as result. If you find a value &lt;code&gt;mac80211&lt;/code&gt; , then that means we are good to go as your system will support hotspot.&lt;/p&gt;
+&lt;h2 id="installing-dependencies"&gt;Installing Dependencies&lt;/h2&gt;
+&lt;p&gt;There are 2 dependencies we might need to install.&lt;/p&gt;
+&lt;p&gt;a) dnsmasq : This is usually present by default in most of the linux machines.&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;b) hostapd : We would have to install this seperately.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt&lt;span class="p"&gt;-&lt;/span&gt;get install hostapd
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="up-and-running-with-hotspotd"&gt;Up and Running with hotspotd&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;hotspotd&lt;/code&gt; works as a small daemon which is very easy to use. It is a project hosted in Github and you can report issues if any &lt;a href="https://github.com/prahladyeri/hotspotd"&gt;here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Installation is pretty straight forward&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;#Download the latest version from Github
+wget https:&lt;span class="sr"&gt;//&lt;/span&gt;github.&lt;span class="k"&gt;com&lt;/span&gt;&lt;span class="sr"&gt;/prahladyeri/&lt;/span&gt;hotspotd&lt;span class="sr"&gt;/raw/&lt;/span&gt;master&lt;span class="sr"&gt;/dist/&lt;/span&gt;hotspotd&lt;span class="m"&gt;-0&lt;/span&gt;.&lt;span class="m"&gt;1&lt;/span&gt;.&lt;span class="m"&gt;5&lt;/span&gt;.tar.gz
+
+#Unzip the &lt;span class="k"&gt;file&lt;/span&gt;
+tar xvf hotspotd&lt;span class="m"&gt;-0&lt;/span&gt;.&lt;span class="m"&gt;1&lt;/span&gt;.&lt;span class="m"&gt;5&lt;/span&gt;.tar.gz
+
+&lt;span class="k"&gt;cd&lt;/span&gt; hotspotd&lt;span class="m"&gt;-0&lt;/span&gt;.&lt;span class="m"&gt;1&lt;/span&gt;.&lt;span class="m"&gt;5&lt;/span&gt;/
+
+#Compile the setup.&lt;span class="k"&gt;py&lt;/span&gt; &lt;span class="k"&gt;file&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; install hotspotd
+sudo python setup.&lt;span class="k"&gt;py&lt;/span&gt; install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To run the hotspot&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo hotspotd &lt;span class="k"&gt;start&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are running for the first time it will ask for set of configurations such as &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Whether the internet connection is through a USB  device such as netsetter (ppo0) or through a wired connection (eth0)&lt;/li&gt;
+&lt;li&gt;A name for the wifi hotspot (SSID)&lt;/li&gt;
+&lt;li&gt;Password for the hotspot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If everything goes well you can see a message &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hotspot is running&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You can stop the hotspot at any time this way&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo hotspotd stop
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Linux"></category><category term="hotspot"></category></entry><entry><title>Using Git and Github</title><link href="http://kskrishnasangeeth.github.io/rand.html" rel="alternate"></link><updated>2015-01-06T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2015-01-03:rand.html</id><summary type="html">&lt;h1 id="why-git"&gt;Why Git?&lt;/h1&gt;
+&lt;p&gt;&lt;i class="fa fa-git"&gt;&lt;/i&gt; is one of the most important tool in software development right now. The advent of websites like github has 
+contributed greately to making the life of a developer whole lot easier. To understand why some sort of version control 
+is a necessity of our time, let me try to think of a scenario.&lt;/p&gt;
+&lt;p&gt;Imagine how we  wrote code the first time when we were learning things. They were messy and that's alright since we were just bothered about getting to see something work. The happiness of seeing something work properly is short lived, because soon you would feel like you could improve upon this somehow. So this is the sequence of things that generally happen.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;You create some stuff &lt;code&gt;X&lt;/code&gt;. It works and you are super happy. &lt;i class="fa fa-smile-o"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Suddenly you see a possible improvement that could be made. So you would play around with &lt;code&gt;X&lt;/code&gt; for a while and there are two possible outcomes here.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We now have a better &lt;code&gt;X&lt;/code&gt; or we are in the territory that  Forrest Gump rightly said 
+    &lt;em&gt;'Shit Happens'&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;How do we tackle this issue? &lt;/p&gt;
+&lt;p&gt;We had working code which went all crazy after a small change that you made somewhere that you don't remember, I have heard stories of people waking up all night and realizing finally that their code is not working for trivial things like a misplaced &lt;code&gt;'/'&lt;/code&gt; or &lt;code&gt;';'&lt;/code&gt; . The programmer who wasted 6 hours on fixing a &lt;code&gt;';'&lt;/code&gt; will surely thing of a better way to go about things.&lt;/p&gt;
+&lt;p&gt;Enter &lt;i class="fa fa-git"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;We are not quite there. At first there is this mad thing we do with folders&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;We create &lt;code&gt;X&lt;/code&gt; , it is working fine and we put it in &lt;code&gt;FOLDER_V1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For every modification or new feature we add to &lt;code&gt;X&lt;/code&gt; ,we create 'n' number  of such folders ranging from &lt;code&gt;FOLDER_V1&lt;/code&gt; to &lt;code&gt;FOLDER_V100&lt;/code&gt; . Isn't this crazy or what ?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="solution"&gt;Solution ?&lt;/h2&gt;
+&lt;p&gt;Git or any other version control saves you from the stink of having different versions of your code in separate folders. It tracks each of the change that we make and gives us control and peace over our code. It does a lot of cool other things and 
+how Git does all this is probably beyond the scope of this writeup, a good place to start will be &lt;a href="http://en.wikipedia.org/wiki/Git_%28software%29"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="time-to-play-with-git"&gt;Time to play with Git&lt;/h1&gt;
+&lt;h2 id="install-git"&gt;Install Git&lt;/h2&gt;
+&lt;p&gt;If you are running a linux machine&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="go"&gt;sudo apt-get install git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are more of a &lt;code&gt;GUI&lt;/code&gt; person and is new to git and has a windows machine , &lt;a href="https://windows.github.com/"&gt;Github for Windows&lt;/a&gt; might be a good choice for working. But i like the feel of working in command line mode.&lt;/p&gt;
+&lt;h2 id="create-an-account-in-github"&gt;Create an account in &lt;a href="http://github.com/"&gt;Github&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It is imperative that we have our code backed up somewhere other than our local machine. &lt;a href="http://github.com"&gt;Github&lt;/a&gt; is a great place to  do this and many other things . Do it &lt;i class="fa fa-smile-o"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;h2 id="creating-a-local-repository"&gt;Creating a local repository&lt;/h2&gt;
+&lt;p&gt;Head over to the directory where your source code resides.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git init
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This creates a new  local git &lt;code&gt;repository&lt;/code&gt;. Git now magically monitors your directory and will know each and every change you will make in the directory.&lt;/p&gt;
+&lt;h2 id="creating-a-remote-repository"&gt;Creating a remote repository&lt;/h2&gt;
+&lt;p&gt;Github gives us the ability to have all our code stored remotely . This gives us many options like having multiple collabarators who work together to improve our code. Also this saves us from scenarios like &lt;/p&gt;
+&lt;p&gt;&lt;i class="fa fa-quote-left"&gt;&lt;/i&gt; All my code was in local machine and it crashed &lt;i class="fa fa-quote-right"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;Well you have no reason to worry if you have a remote repostory&lt;/p&gt;
+&lt;p&gt;I skipped a step here, you would have to create a repository in github first. Upon creating a repository, you will get a git url which looks like this &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://github.com/Your_Github_Username/Your_repository_name.git&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git remote add origin &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Your Remote repository git url&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We are essentially telling git this &lt;/p&gt;
+&lt;p&gt;&lt;i class="fa fa-quote-left"&gt;&lt;/i&gt; This is the remote repository where we would want to sync our local repository with. &lt;i class="fa fa-quote-right"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;origin&lt;/code&gt;  is a name which we are giving here to refer to this remote repository. You could alternatively give any other name based on your preference. It is standard practice to name the repository as &lt;code&gt;origin&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="add-files-that-matter-to-us"&gt;Add files that matter to us&lt;/h2&gt;
+&lt;p&gt;We can either add files individually like this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git add &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;filename&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or we can add all the files in a directory at one go.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git add &lt;span class="p"&gt;--&lt;/span&gt;&lt;span class="k"&gt;all&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="commiting-the-changes"&gt;Commiting the changes&lt;/h2&gt;
+&lt;p&gt;Remember from our SQL days that unless we perform the &lt;code&gt;commit&lt;/code&gt; operation, changes to database wont be permanent . In &lt;i class="fa fa-git"&gt;&lt;/i&gt; parlance &lt;code&gt;commit&lt;/code&gt; means something similar, it is the way by which git knows you have made changes to the directory that needs to be tracked. In essence we are saying to git &lt;/p&gt;
+&lt;p&gt;&lt;i class="fa fa-quote-left"&gt;&lt;/i&gt; we have made some changes to the directory and this changes need to be tracked &lt;i class="fa fa-quote-right"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git commit &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="k"&gt;m&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;YOUR-COMMIT-MESAGE&amp;gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The commit message is used to describe the change that we had made . It could be something like "fixed the issue with IE8" .&lt;/p&gt;
+&lt;h2 id="pushing-the-changes-to-github"&gt;Pushing the changes to Github&lt;/h2&gt;
+&lt;p&gt;We have asked git in our local machine to keep track of changes. But we want to do the same with our remote git repository which is github. Or in other words we have to sync our local repository with remote repository. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git push origin master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;origin&lt;/code&gt; is the name we had given to our repository for referring. We are pushing this repository to a branch called  &lt;code&gt;master&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Think of branches as a seperate container where our code resides. It is intutive to name our main copy of working code as &lt;code&gt;master&lt;/code&gt; and is hence the standard practice&lt;/p&gt;
+&lt;h2 id="a-bit-more-on-branches"&gt;A bit more on Branches&lt;/h2&gt;
+&lt;p&gt;Suppose we are trying to add something new to our existing codebase. Think of this as a new feature that we are testing out or believe we can incorporate to our codebase. The smart thing to do is work on it seperately from our &lt;code&gt;master&lt;/code&gt; branch.
+So what we do is, copy our master branch to a new branch and tell git to specifically that we are working on the new branch. This way git ensures that our code in master branch remains isolated from the new branch we are creating.&lt;/p&gt;
+&lt;p&gt;Here is how we create a new branch&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git checkout &lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="k"&gt;b&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;new_branch_name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You might have heard of &lt;code&gt;checkout&lt;/code&gt; already. We are essentially creating a new branch by copying the content of master branch here after this.&lt;/p&gt;
+&lt;p&gt;We need to tell git specifically to point to a particular branch.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git checkout master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This tells git that now we are working on master branch and changes for this branch needs to be tracked.&lt;/p&gt;
+&lt;h2 id="knowing-which-branch-we-are-working-on-and-other-things"&gt;Knowing which branch we are working on and other things.&lt;/h2&gt;
+&lt;p&gt;This will show which branch git is currently pointing to.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git status
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We will see response like &lt;em&gt;"On master branch"&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Also this command will give us info such as which are the newly added files(untracked files), which are the files that that has changes made.&lt;/p&gt;
+&lt;h2 id="dont-forget-to-push-the-new-branch-to-remote-repo"&gt;Don't forget to push the new branch to remote repo&lt;/h2&gt;
+&lt;p&gt;We have finished working on the new branch and it can be pushed to remote repository by this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git push origin &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;new_branch_name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now if we go and check in github, we could see the seperate branches created.&lt;/p&gt;
+&lt;h2 id="merging-the-new-feature-to-our-master-copy"&gt;Merging the new feature to our master copy&lt;/h2&gt;
+&lt;p&gt;We always try to keep one master copy which we would want to keep as our perfect codebase or something we want to keep isolated. But now our new feature has been well and truly tested and we are ready to make a new master copy by integrating the changes present in our new branch.&lt;/p&gt;
+&lt;p&gt;Fist we point git to our master branch using &lt;code&gt;checkout&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git checkout master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then we can merge the new branch to master &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git merge &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;new_branch_we_created&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Git will merge the new branch we created with the master branch unless there are any conflicts. If there are any conflicts we would have to make the changes manually and then try to merge again.&lt;/p&gt;
+&lt;h2 id="changing-my-local-machine-what-do-i-do"&gt;Changing my local machine, what do I do?&lt;/h2&gt;
+&lt;p&gt;We already have pushed our code to Github and get it in our new machine pretty easily. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create a new local repo using &lt;code&gt;git init&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sync our local repo with the remote repo &lt;code&gt;git remote add origin &amp;lt;'our_remote_repo_git_url'&amp;gt; &lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now we can &lt;code&gt;pull&lt;/code&gt; the latest version of our remote repository.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git pull origin &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;branch_name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We can also simply give git pull and the branch that Github considers as the default branch will be pulled, the example given above is for the scenario where we want a particular branch to be copied into our local machine.&lt;/p&gt;
+&lt;h2 id="see-something-interesting-clone-it"&gt;See something interesting. Clone it&lt;/h2&gt;
+&lt;p&gt;Github is sort of the social network of developers where code does most of the talking. If we see a repo that we would like to hack in, we can get it in our local machine easily&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git clone &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;remote_repository_git_url&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In case of github, this url can be seen on the right hand side of the repository page.&lt;/p&gt;
+&lt;h1 id="final-thoughts"&gt;Final Thoughts&lt;/h1&gt;
+&lt;p&gt;I have barely scratched the surface on the true potential of git and Github, it is something i believe that should be experienced by every developer. Github is really fuelling the opensource development community with tools that makes their work really easy. Incase you have never tried git or github before I strongly encourage you to give it a try.&lt;/p&gt;
+&lt;h1 id="other-places-to-learn"&gt;Other Places to learn&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://help.github.com/articles/set-up-git/"&gt;Github&lt;/a&gt; help pages are good.&lt;/p&gt;
+&lt;p&gt;Code school has a great interactive course on &lt;a href="https://try.github.io/"&gt;git&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This &lt;a href="http://rogerdudler.github.io/git-guide/"&gt;infographic&lt;/a&gt; is so good that you would feel like buying a beer to the guy who created this.&lt;/p&gt;
+&lt;p&gt;Atlassian has a great &lt;a href="https://www.atlassian.com/git/tutorials/"&gt;tutorial&lt;/a&gt; which is highly detailed that could really turn you into a git Guru.&lt;/p&gt;
+&lt;p&gt;PS : I wanted to keep this article as simple as possible in language and tone. I am not sure how much i have succeeded in that. If i have got something wrong or something needs more explanation please let me know in comments.&lt;/p&gt;</summary><category term="Git"></category><category term="Github"></category></entry><entry><title>Pelican Trial</title><link href="http://kskrishnasangeeth.github.io/hello.html" rel="alternate"></link><updated>2014-12-28T00:00:00+00:00</updated><author><name>Sangeeth</name></author><id>tag:kskrishnasangeeth.github.io,2014-12-26:hello.html</id><summary type="html">&lt;p&gt;So i am trying out pelican for the first time here.&lt;/p&gt;
+&lt;p&gt;I have tried out &lt;code&gt;jekyll&lt;/code&gt; earlier using gh-pages and here i am trying out the python equivalent.&lt;/p&gt;
+&lt;p&gt;Since i was using my windows box this time , there was a bit of tweaking that was needed to eventually get things running.&lt;/p&gt;
+&lt;p&gt;A detailed step by step guide for running in windows is available &lt;a href="http://spapas.github.io/2013/10/07/pelican-static-windows/"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;python&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello World from Pelican&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hosting is made in github pages which is really cool and interesting.&lt;/p&gt;
+&lt;p&gt;That's all for now &lt;/p&gt;
+&lt;p&gt;i  &lt;i class="fa fa-heart"&gt;&lt;/i&gt;  pelican&lt;/p&gt;</summary><category term="Pelican"></category></entry></feed>
